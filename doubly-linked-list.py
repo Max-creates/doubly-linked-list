@@ -152,14 +152,9 @@ class DoublyLinkedList:
         return temp
 
     def reverse(self):
-        head = self.head
-        tail = self.tail
-        current = self.head
-        while current is not None:
-            temp = current
-            current = current.next
-            temp.next = temp.prev
-            temp.prev = current
+        temp = self.head
+        while temp is not None:
+            temp.next, temp.prev = temp.prev, temp.next
+            temp = temp.prev
 
-        self.head = tail
-        self.tail = head
+        self.head, self.tail = self.tail, self.head
