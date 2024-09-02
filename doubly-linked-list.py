@@ -179,7 +179,7 @@ class DoublyLinkedList:
         temp_head = self.head
         temp_tail = self.tail
 
-        for _ in range(self.length):
+        for _ in range(self.length // 2):
             if temp_head.value == temp_tail.value:
                 temp_head = temp_head.next
                 temp_tail = temp_tail.prev
